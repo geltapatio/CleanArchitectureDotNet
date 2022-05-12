@@ -1,9 +1,9 @@
-﻿using GloboTicket.TicketManagement.Domain.Common;
+﻿using MediatR;
 using System;
 
-namespace GloboTicket.TicketManagement.Domain.Entities
+namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent
 {
-    public class Event: AuditableEntity
+    public class UpdateEventCommand: IRequest
     {
         public Guid EventId { get; set; }
         public string Name { get; set; }
@@ -13,7 +13,5 @@ namespace GloboTicket.TicketManagement.Domain.Entities
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public Guid CategoryId { get; set; }
-        public Category Category { get; set; }
-
     }
 }
