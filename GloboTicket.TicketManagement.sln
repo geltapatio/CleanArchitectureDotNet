@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{0482D96C-30DD-4C8A-A5EC-C402FD24C300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalTicket.TicketManagement.Domain", ".\GlobalTicket.TicketManagement.Domain\GlobalTicket.TicketManagement.Domain.csproj", "{AF96CB20-F243-471B-B851-FEA15A8836E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalTicket.TicketManagement.Application", "GlobalTicket.TicketManagement.Application\GlobalTicket.TicketManagement.Application.csproj", "{BCD2E6ED-6775-45CA-B31D-6295B95E97C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalTicket.TicketManagement.Application", ".\GlobalTicket.TicketManagement.Application\GlobalTicket.TicketManagement.Application.csproj", "{BCD2E6ED-6775-45CA-B31D-6295B95E97C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalTicket.TicketManagement.Domain", "GlobalTicket.TicketManagement.Domain\GlobalTicket.TicketManagement.Domain.csproj", "{9905227C-A1BB-45FF-A47C-FCC0C985B03C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF96CB20-F243-471B-B851-FEA15A8836E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF96CB20-F243-471B-B851-FEA15A8836E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF96CB20-F243-471B-B851-FEA15A8836E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF96CB20-F243-471B-B851-FEA15A8836E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BCD2E6ED-6775-45CA-B31D-6295B95E97C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BCD2E6ED-6775-45CA-B31D-6295B95E97C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCD2E6ED-6775-45CA-B31D-6295B95E97C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCD2E6ED-6775-45CA-B31D-6295B95E97C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9905227C-A1BB-45FF-A47C-FCC0C985B03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9905227C-A1BB-45FF-A47C-FCC0C985B03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9905227C-A1BB-45FF-A47C-FCC0C985B03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9905227C-A1BB-45FF-A47C-FCC0C985B03C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,8 +42,8 @@ Global
 		{DCD4E766-EB6E-402C-A83F-00574711A01D} = {606B8C3A-0D45-4E8A-AD73-967D9EF18647}
 		{6C588AC8-F80C-4F4A-B534-8AAAC71BD35B} = {606B8C3A-0D45-4E8A-AD73-967D9EF18647}
 		{0482D96C-30DD-4C8A-A5EC-C402FD24C300} = {606B8C3A-0D45-4E8A-AD73-967D9EF18647}
-		{AF96CB20-F243-471B-B851-FEA15A8836E6} = {DCD4E766-EB6E-402C-A83F-00574711A01D}
 		{BCD2E6ED-6775-45CA-B31D-6295B95E97C4} = {DCD4E766-EB6E-402C-A83F-00574711A01D}
+		{9905227C-A1BB-45FF-A47C-FCC0C985B03C} = {DCD4E766-EB6E-402C-A83F-00574711A01D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFAA4938-FEE9-4013-99D1-4A1E227D10CC}
