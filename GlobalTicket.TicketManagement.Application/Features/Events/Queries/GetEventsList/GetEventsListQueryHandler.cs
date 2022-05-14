@@ -2,10 +2,6 @@
 using GloboTicket.TicketManagement.Application.Contracts.Persistence;
 using GloboTicket.TicketManagement.Domain.Entities;
 using MediatR;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventsList
 {
@@ -22,7 +18,7 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEv
 
         public async Task<List<EventListVm>> Handle(GetEventsListQuery request, CancellationToken cancellationToken)
         {
-            var allEvents = (await _eventRepository.ListAllAsync()).OrderBy(x => x.Date);
+            IOrderedEnumerable<Event>? allEvents = (await _eventRepository.ListAllAsync()).OrderBy(x => x.Date);
             return _mapper.Map<List<EventListVm>>(allEvents);
         }
     }

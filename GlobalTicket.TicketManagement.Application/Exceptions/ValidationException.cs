@@ -1,6 +1,4 @@
 ﻿using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
 
 namespace GloboTicket.TicketManagement.Application.Exceptions
 {
@@ -12,7 +10,7 @@ namespace GloboTicket.TicketManagement.Application.Exceptions
         {
             ValdationErrors = new List<string>();
 
-            foreach (var validationError in validationResult.Errors)
+            foreach (ValidationFailure? validationError in validationResult.Errors)
             {
                 ValdationErrors.Add(validationError.ErrorMessage);
             }

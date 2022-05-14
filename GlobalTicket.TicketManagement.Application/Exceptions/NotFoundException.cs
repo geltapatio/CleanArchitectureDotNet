@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GloboTicket.TicketManagement.Application.Exceptions
+﻿namespace GloboTicket.TicketManagement.Application.Exceptions
 {
     public class NotFoundException : ApplicationException
     {

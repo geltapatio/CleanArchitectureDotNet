@@ -11,7 +11,7 @@ using GloboTicket.TicketManagement.Domain.Entities;
 
 namespace GloboTicket.TicketManagement.Application.Profiles
 {
-    public class MappingProfile: Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {
