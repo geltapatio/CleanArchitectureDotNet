@@ -3,8 +3,6 @@ using GloboTicket.TicketManagement.Application.Contracts.Persistence;
 using GloboTicket.TicketManagement.Application.Exceptions;
 using GloboTicket.TicketManagement.Domain.Entities;
 using MediatR;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent
 {
@@ -22,15 +20,15 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.Upda
         public async Task<Unit> Handle(UpdateEventCommand request, CancellationToken cancellationToken)
         {
 
-            var eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);
+            Event? eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);
 
             if (eventToUpdate == null)
             {
                 throw new NotFoundException(nameof(Event), request.EventId);
             }
 
-            var validator = new UpdateEventCommandValidator();
-            var validationResult = await validator.ValidateAsync(request);
+            UpdateEventCommandValidator? validator = new UpdateEventCommandValidator();
+            FluentValidation.Results.ValidationResult? validationResult = await validator.ValidateAsync(request);
 
             if (validationResult.Errors.Count > 0)
                 throw new ValidationException(validationResult);

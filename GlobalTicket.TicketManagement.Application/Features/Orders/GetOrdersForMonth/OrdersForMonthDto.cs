@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GloboTicket.TicketManagement.Application.Features.Orders.GetOrdersForMonth
+﻿namespace GloboTicket.TicketManagement.Application.Features.Orders.GetOrdersForMonth
 {
     public class OrdersForMonthDto
     {
