@@ -19,7 +19,7 @@ namespace GloboTicket.TicketManagement.Persistence
             services.AddScoped<IEventRepository, EventRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
 
-            return services;
+            return services;    
         }
     }
 }

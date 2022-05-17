@@ -1,5 +1,7 @@
 using GlobalTicket.TicketManagement.Api.OeprationFilter;
+using GloboTicket.TicketManagement.Api.Services;
 using GloboTicket.TicketManagement.Application;
+using GloboTicket.TicketManagement.Application.Contracts;
 using GloboTicket.TicketManagement.Infrastructure;
 using GloboTicket.TicketManagement.Persistence;
 
@@ -9,6 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
+
 builder.Services.AddControllers();
 builder.Services.AddCors(options => options.AddPolicy("Open", policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -25,12 +30,6 @@ builder.Services.AddSwaggerGen(c =>
 );
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 app.UseRouting();
@@ -45,4 +44,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+
 app.Run();
+public partial class Program { }
