@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
-using System.Threading.Tasks;
 
 namespace GloboTicket.TicketManagement.Infrastructure.Mail
 {
@@ -21,20 +20,20 @@ namespace GloboTicket.TicketManagement.Infrastructure.Mail
 
         public async Task<bool> SendEmail(Email email)
         {
-            var client = new SendGridClient(_emailSettings.ApiKey);
+            SendGridClient? client = new SendGridClient(_emailSettings.ApiKey);
 
-            var subject = email.Subject;
-            var to = new EmailAddress(email.To);
-            var emailBody = email.Body;
+            string? subject = email.Subject;
+            EmailAddress? to = new EmailAddress(email.To);
+            string? emailBody = email.Body;
 
-            var from = new EmailAddress
+            EmailAddress? from = new EmailAddress
             {
                 Email = _emailSettings.FromAddress,
                 Name = _emailSettings.FromName
             };
 
-            var sendGridMessage = MailHelper.CreateSingleEmail(from, to, subject, emailBody, emailBody);
-            var response = await client.SendEmailAsync(sendGridMessage);
+            SendGridMessage? sendGridMessage = MailHelper.CreateSingleEmail(from, to, subject, emailBody, emailBody);
+            Response? response = await client.SendEmailAsync(sendGridMessage);
 
             _logger.LogInformation("Email sent");
 
