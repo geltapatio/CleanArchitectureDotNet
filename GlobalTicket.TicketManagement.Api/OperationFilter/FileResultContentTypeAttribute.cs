@@ -1,4 +1,4 @@
-﻿namespace GlobalTicket.TicketManagement.Api.OeprationFilter
+﻿namespace GlobalTicket.TicketManagement.Api.OperationFilter
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class FileResultContentTypeAttribute : Attribute

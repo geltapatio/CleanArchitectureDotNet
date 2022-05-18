@@ -1,4 +1,4 @@
-using GlobalTicket.TicketManagement.Api.OeprationFilter;
+using GlobalTicket.TicketManagement.Api.OperationFilter;
 using GloboTicket.TicketManagement.Api.Services;
 using GloboTicket.TicketManagement.Application;
 using GloboTicket.TicketManagement.Application.Contracts;
@@ -28,21 +28,36 @@ builder.Services.AddSwaggerGen(c =>
     c.OperationFilter<FileResultContentTypeOperationFilter>();
 }
 );
+
+builder.Services.AddSwaggerDocument(settings =>
+{
+    settings.PostProcess = document =>
+    {
+        document.Info.Version = "v1";
+        document.Info.Title = "Example API";
+        document.Info.Description = "REST API for example.";
+    };
+});
+
 var app = builder.Build();
 
 
 app.UseHttpsRedirection();
 app.UseRouting();
-app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "GloboTicket Ticket Management API");
 });
+// Enable the Swagger UI middleware and the Swagger generator
+app.UseOpenApi();
+app.UseSwaggerUi3();
+
 app.UseCors("Open");
 
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 
 app.Run();
