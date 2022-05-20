@@ -1,11 +1,19 @@
+using CleanArchitecture.DotNet6.Api.Middleware;
 using CleanArchitecture.DotNet6.Api.OperationFilter;
 using CleanArchitecture.DotNet6.Api.Services;
 using CleanArchitecture.DotNet6.Application;
 using CleanArchitecture.DotNet6.Application.Contracts;
 using CleanArchitecture.DotNet6.Infrastructure;
 using CleanArchitecture.DotNet6.Persistence;
+using Serilog;
 
-WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
+
+// Add Serilog
+Log.Logger = new LoggerConfiguration().CreateBootstrapLogger();
+builder.Host.UseSerilog(((ctx, lc) => lc
+
+.ReadFrom.Configuration(ctx.Configuration)));
 
 // Add services to the container.
 builder.Services.AddApplicationServices();
@@ -39,7 +47,7 @@ builder.Services.AddSwaggerDocument(settings =>
     };
 });
 
-WebApplication? app = builder.Build();
+var app = builder.Build();
 
 
 app.UseHttpsRedirection();
@@ -51,6 +59,11 @@ app.UseSwaggerUI(c =>
 // Enable the Swagger UI middleware and the Swagger generator
 app.UseOpenApi();
 app.UseSwaggerUi3();
+
+// Serilog
+app.UseSerilogRequestLogging();
+
+app.UseCustomExceptionHandler();
 
 app.UseCors("Open");
 
