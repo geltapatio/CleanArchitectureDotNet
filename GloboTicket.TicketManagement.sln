@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.TicketManagemen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.TicketManagement.Domain", "GlobalTicket.TicketManagement.Domain\GloboTicket.TicketManagement.Domain.csproj", "{9905227C-A1BB-45FF-A47C-FCC0C985B03C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalTicket.TicketManagement.Persistence", "GlobalTicket.TicketManagement.Persistence\GlobalTicket.TicketManagement.Persistence.csproj", "{32CF528B-3C64-4DCB-A672-C8A8DB19E45C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.TicketManagement.Persistence", "GlobalTicket.TicketManagement.Persistence\GloboTicket.TicketManagement.Persistence.csproj", "{32CF528B-3C64-4DCB-A672-C8A8DB19E45C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.TicketManagement.Infrastructure", "GlobalTicket.TicketManagement.Infrastructure\GloboTicket.TicketManagement.Infrastructure.csproj", "{499C69A5-3F49-4660-86BF-E2AA7BECB3A9}"
 EndProject

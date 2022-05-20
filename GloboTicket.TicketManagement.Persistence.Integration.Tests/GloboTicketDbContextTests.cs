@@ -6,7 +6,7 @@ using Shouldly;
 using System;
 using Xunit;
 
-namespace GloboTicket.TicketManagement.Persistence.IntegrationTests
+namespace GloboTicket.TicketManagement.Persistence.Integration.Tests
 {
     public class GloboTicketDbContextTests
     {
@@ -28,7 +28,7 @@ namespace GloboTicket.TicketManagement.Persistence.IntegrationTests
         [Fact]
         public async void Save_SetCreatedByProperty()
         {
-            var ev = new Event() {EventId = Guid.NewGuid(), Name = "Test event" };
+            var ev = new Event() { EventId = Guid.NewGuid(), Name = "Test event" };
 
             _globoTicketDbContext.Events.Add(ev);
             await _globoTicketDbContext.SaveChangesAsync();

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace GlobalTicket.TicketManagement.Persistence.Configurations
+namespace GloboTicket.TicketManagement.Persistence.Configurations
 {
     public class EventConfiguration : IEntityTypeConfiguration<Event>
     {

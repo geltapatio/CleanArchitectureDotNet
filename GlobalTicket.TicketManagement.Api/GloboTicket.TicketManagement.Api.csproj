@@ -30,7 +30,7 @@
   <ItemGroup>
 	<ProjectReference Include="..\GlobalTicket.TicketManagement.Application\GloboTicket.TicketManagement.Application.csproj" />
 	<ProjectReference Include="..\GlobalTicket.TicketManagement.Infrastructure\GloboTicket.TicketManagement.Infrastructure.csproj" />
-	<ProjectReference Include="..\GlobalTicket.TicketManagement.Persistence\GlobalTicket.TicketManagement.Persistence.csproj" />
+	<ProjectReference Include="..\GlobalTicket.TicketManagement.Persistence\GloboTicket.TicketManagement.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>

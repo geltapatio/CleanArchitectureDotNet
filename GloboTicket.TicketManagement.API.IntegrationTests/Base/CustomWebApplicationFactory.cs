@@ -36,7 +36,7 @@ namespace GloboTicket.TicketManagement.API.IntegrationTests.Base
                 var logger = scopedServices.GetRequiredService<ILogger<CustomWebApplicationFactory<TStartup>>>();
 
                 context.Database.EnsureCreated();
-                
+
                 try
                 {
                     Utilities.InitializeDbForTests(context);

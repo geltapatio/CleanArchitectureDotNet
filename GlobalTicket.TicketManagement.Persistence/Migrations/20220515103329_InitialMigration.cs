@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace GlobalTicket.TicketManagement.Persistence.Migrations
+namespace GloboTicket.TicketManagement.Persistence.Migrations
 {
     public partial class InitialMigration : Migration
     {

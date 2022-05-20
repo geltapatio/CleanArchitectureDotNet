@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GlobalTicket.TicketManagement.Persistence.Migrations
+namespace GloboTicket.TicketManagement.Persistence.Migrations
 {
     [DbContext(typeof(GloboTicketDbContext))]
     partial class GloboTicketDbContextModelSnapshot : ModelSnapshot

@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-
-namespace GloboTicket.TicketManagement.Api.Middleware
+﻿namespace GloboTicket.TicketManagement.Api.Middleware
 {
     public static class MiddlewareExtensions
     {
