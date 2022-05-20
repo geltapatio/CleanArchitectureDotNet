@@ -1,5 +1,4 @@
 ﻿using GloboTicket.TicketManagement.Application.Contracts;
-using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
 namespace GloboTicket.TicketManagement.Api.Services
