@@ -7,6 +7,10 @@
 	<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="GloboTicket.TicketManagement.API.IntegrationTests" />
+	</ItemGroup>
+
   <ItemGroup>
 	<PackageReference Include="MediatR" Version="10.0.1" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
