@@ -26,7 +26,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\GlobalTicket.TicketManagement.Api\GlobalTicket.TicketManagement.Api.csproj" />
+		<ProjectReference Include="..\GlobalTicket.TicketManagement.Api\GloboTicket.TicketManagement.Api.csproj" />
 		<ProjectReference Include="..\GlobalTicket.TicketManagement.Persistence\GlobalTicket.TicketManagement.Persistence.csproj" />
 	</ItemGroup>
 

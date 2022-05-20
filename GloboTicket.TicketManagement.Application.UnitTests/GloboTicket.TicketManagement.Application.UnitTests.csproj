@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GlobalTicket.TicketManagement.Application\GlobalTicket.TicketManagement.Application.csproj" />
+    <ProjectReference Include="..\GlobalTicket.TicketManagement.Application\GloboTicket.TicketManagement.Application.csproj" />
   </ItemGroup>
 
 </Project>
