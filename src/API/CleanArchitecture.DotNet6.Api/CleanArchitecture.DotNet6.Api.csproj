@@ -43,18 +43,9 @@
     <ProjectReference Include="..\..\Infrastructure\CleanArchitecture.DotNet6.Infrastructure\CleanArchitecture.DotNet6.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\CleanArchitecture.DotNet6.Persistence\CleanArchitecture.DotNet6.Persistence.csproj" />
   </ItemGroup>
-	<Target Name="NSwag" AfterTargets="Build">
-		<Exec EnvironmentVariables="ASPNETCORE_ENVIRONMENT=Development" Command="$(NSwagExe) aspnetcore2openapi /assembly:$(TargetDir)CleanArchitecture.DotNet6.Api.dll /output:swagger.json" />
-		<Exec Command="$(NSwagExe) openapi2tsclient /input:swagger.json /output:Scripts/MyController.ts" />
-	</Target>
 
-	<Target Name="NSwag" BeforeTargets="PostBuildEvent" Condition=" '$(Configuration)' == 'Debug' ">
-		<Exec ConsoleToMSBuild="true" ContinueOnError="true" WorkingDirectory="$(ProjectDir)" EnvironmentVariables="ASPNETCORE_ENVIRONMENT=Development" Command="$(NSwagExe_Net60) run nswag.json /variables:Configuration=$(Configuration)">
-			<Output TaskParameter="ExitCode" PropertyName="NSwagExitCode" />
-			<Output TaskParameter="ConsoleOutput" PropertyName="NSwagOutput" />
-		</Exec>
-		<Message Text="$(NSwagOutput)" Condition="'$(NSwagExitCode)' == '0'" Importance="low" />
-		<Error Text="$(NSwagOutput)" Condition="'$(NSwagExitCode)' != '0'" />
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="powershell -NoProfile -ExecutionPolicy RemoteSigned -file &quot;$(ProjectDir)\Execute-OpenApiTemplateGenerator.ps1&quot;" />
 	</Target>
 	
 </Project>
